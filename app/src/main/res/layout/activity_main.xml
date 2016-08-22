@@ -1,0 +1,189 @@
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".MainActivity">
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="#000000">
+
+		<ImageView
+			android:id="@+id/image_streaming"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:contentDescription="Streamed picture from camera on aircraft"
+			android:scaleType="fitCenter"
+			android:src="@mipmap/ic_launcher"/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginTop="100dp"
+			android:orientation="vertical"
+			android:visibility="invisible">
+
+			<SeekBar
+				android:id="@+id/seek_thro"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:max="3200"
+				android:progress="1600"/>
+
+			<SeekBar
+				android:id="@+id/seek_aile"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:max="3200"
+				android:progress="1600"/>
+
+			<SeekBar
+				android:id="@+id/seek_elev"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:max="3200"
+				android:progress="1600"/>
+
+			<SeekBar
+				android:id="@+id/seek_rudd"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:max="3200"
+				android:progress="1600"/>
+
+			<SeekBar
+				android:id="@+id/seek_screw"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:max="3200"
+				android:progress="1600"/>
+
+			<SeekBar
+				android:id="@+id/seek_aux"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:max="3200"
+				android:progress="1600"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/shadow"
+				android:paddingLeft="@dimen/activity_horizontal_margin"
+				android:paddingRight="@dimen/activity_horizontal_margin">
+
+				<LinearLayout
+					android:orientation="horizontal"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="false"
+					android:layout_marginLeft="0dp"
+					android:layout_alignParentTop="true"
+					android:layout_marginTop="0dp"
+					android:layout_alignParentRight="true"
+					android:layout_alignParentStart="false"
+					android:layout_alignParentEnd="true">
+
+					<ToggleButton
+						android:id="@+id/toggle_control"
+						android:layout_width="36dp"
+						android:layout_height="36dp"
+						android:background="@drawable/toggle_control"
+						android:textOff=""
+						android:textOn=""/>
+
+					<ToggleButton
+						android:id="@+id/toggle_accelerometer"
+						android:layout_width="36dp"
+						android:layout_height="36dp"
+						android:background="@drawable/toggle_steering"
+						android:textOff=""
+						android:textOn=""/>
+
+					<ToggleButton
+						android:id="@+id/toggle_controller"
+						android:layout_width="36dp"
+						android:layout_height="36dp"
+						android:background="@drawable/controller_toggle"
+						android:textOff=""
+						android:textOn=""/>
+
+					<Button
+						android:id="@+id/button_accelerometer_trim"
+						style="?android:attr/buttonStyleSmall"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="onClickAccelerometerTrim"
+						android:text="TRIM"/>
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+
+					<Button
+						android:id="@+id/button_wifi"
+						style="?android:attr/buttonStyleSmall"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="onClickWifiCheck"
+						android:text="WIFI"/>
+
+					<ToggleButton
+						android:id="@+id/toggle_video"
+						android:layout_width="36dp"
+						android:layout_height="36dp"
+						android:background="@drawable/toggle_video"
+						android:textOff=""
+						android:textOn=""/>
+
+					<ToggleButton
+						android:id="@+id/toggle_streaming_size"
+						android:layout_width="36dp"
+						android:layout_height="36dp"
+						android:background="@drawable/toggle_screen_size"
+						android:textOff=""
+						android:textOn=""/>
+
+				</LinearLayout>
+			</RelativeLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center">
+
+				<ru.kolotnev.quadcopter.JoystickView
+					android:id="@+id/joystick_left"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="1"/>
+
+				<ru.kolotnev.quadcopter.JoystickView
+					android:id="@+id/joystick_right"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="1"/>
+			</LinearLayout>
+		</LinearLayout>
+
+		<TextView
+			android:id="@+id/text_status"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="50dp"
+			android:text="@string/hello_world"/>
+
+	</FrameLayout>
+
+</FrameLayout>
